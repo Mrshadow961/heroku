@@ -18,12 +18,11 @@ RUN apt-get -y install nodejs
 RUN npm install --global yarn
 RUN npm install --global @cloudflare/wrangler
 
-RUN curl -O https://raw.githubusercontent.com/libDrive/server/main/requirements.txt && \
+RUN curl -O https://raw.githubusercontent.com/Mrshadow961/server/main/requirements.txt && \
     pip3 install -r requirements.txt --no-cache-dir
 
 ENV PATH="/usr/src/app/.local/bin:${PATH}"
 
 COPY . .
 
-RUN chmod +x ./.bin/setup.sh ./.bin/start.sh
-RUN ./.bin/setup.sh
+RUN chmod +x ./.bin/start.sh
